@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Palindrome test</title>
+    <script src="./components/jquery/dist/jquery.min.js"></script>
+  </head>
+  <body>
+    <form class="" action="#" method="post">
+      <input id="mensagem" type="text" name="mensagem" value="" placeholder="Test if is palindrome">
+      <input type="button" name="name" value="Send" onclick="callServicePalindrome();">
+    </form>
+  </body>
+
+  <script type="text/javascript">
+    function callServicePalindrome() {
+      var msg = $('#mensagem').val();
+      var data = {
+        'mensagem': msg
+      };
+      $.ajax({
+        type: "POST",
+        url: "http://localhost:8080/palindrome",
+        data: JSON.stringify(data),
+        contentType:"application/json",
+        success: function(data, textStatus, xhr) {
+            console.log(xhr.status);
+        },
+        complete: function(xhr, textStatus) {
+            console.log(xhr.status);
+        },
+        dataType:"json",
+      });
+    }
+  </script>
+</html>

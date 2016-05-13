@@ -6,13 +6,22 @@
     <script src="./components/jquery/dist/jquery.min.js"></script>
   </head>
   <body>
-    <form class="" action="#" method="post">
+    <form id="formPalindrome" action="" method="post">
       <input id="mensagem" type="text" name="mensagem" value="" placeholder="Test if is palindrome">
-      <input type="button" name="name" value="Send" onclick="callServicePalindrome();">
+      <input type="submit" name="name" value="Send">
     </form>
   </body>
 
   <script type="text/javascript">
+
+  $(document).ready(function() {
+    $("#formPalindrome").submit(function(e) {
+      callServicePalindrome();
+      e.preventDefault();
+      return false;
+    });
+  });
+
     function callServicePalindrome() {
       var msg = $('#mensagem').val();
       var data = {

@@ -8,8 +8,8 @@ router.post('', function (req, res) {
     status = 400;
   }
 
-  if (status !== 400 ) {
-    var normalizedText = fullText.replace(/ /g,'');
+  if (status !== 400 ){
+    var normalizedText = fullText.replace(/ /g,'').toLowerCase().normalize();
     var isPalindrome = palindrome(normalizedText);
 
     if (isPalindrome) {
@@ -18,8 +18,6 @@ router.post('', function (req, res) {
       status = 400;
     }
   }
-
-  res.sendStatus(status);
 
   function palindrome(str) {
     var len = str.length;
@@ -30,6 +28,7 @@ router.post('', function (req, res) {
     }
     return true;
   }
-})
 
+  res.sendStatus(status);
+})
 module.exports = router;

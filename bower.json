@@ -1,0 +1,22 @@
+{
+  "name": "palindrome",
+  "description": "Palindrome rest",
+  "main": "server.js",
+  "authors": [
+    "Thiago Diniz da Silveira"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/thiagodsti/palindrome",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.3"
+  }
+}
